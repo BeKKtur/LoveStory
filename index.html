@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#16070d" />
+  <title>Для тебя ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="locked">
+  <div class="noise"></div><div id="particles" aria-hidden="true"></div>
+  <button class="music" id="musicBtn" aria-label="Включить музыку"><span>♫</span><i></i></button>
+
+  <section class="intro" id="intro">
+    <div class="intro-copy"><span class="eyebrow">маленькая история</span><h1>Для тебя <em>❤</em></h1></div>
+    <div class="envelope-wrap">
+      <div class="envelope">
+        <div class="letter"><span>just for you</span><b>Ты — моя<br>любимая история</b></div>
+        <div class="back"></div><div class="flap"></div><div class="front"></div>
+        <button class="seal" id="openGift" aria-label="Открыть подарок">❤</button>
+      </div>
+    </div>
+    <button class="open-label" id="openLabel">Открыть <span>→</span></button>
+  </section>
+
+  <main id="story">
+    <section class="hero section">
+      <div class="orb"></div><span class="eyebrow reveal">наша история</span>
+      <h1 class="reveal">Ты — моя<br><i>любимая</i> история</h1>
+      <p class="reveal">И я хочу рассказать тебе, почему…</p>
+      <div class="scroll-cue"><span></span>листай ниже</div>
+    </section>
+
+    <section class="timeline section">
+      <header class="section-head reveal"><span class="eyebrow">chapter i</span><h2>Всё началось с…</h2><p>Обычных мгновений, которые стали самыми дорогими.</p></header>
+      <div class="timeline-line"></div>
+      <article class="moment reveal"><div class="polaroid memory m1"></div><div><small>01 · начало</small><h3>Наша первая встреча</h3><p>Тот самый день, когда мир ещё не знал, что для меня он только что изменился.</p></div></article>
+      <article class="moment reverse reveal"><div class="polaroid memory m2"></div><div><small>02 · ближе</small><h3>Наше первое свидание</h3><p>Я помню свет, твой смех и ощущение, что мне никуда не нужно спешить.</p></div></article>
+      <article class="moment reveal"><div class="polaroid memory m4"></div><div><small>03 · навсегда</small><h3>Момент, когда я понял…</h3><p>Моё любимое место — не город. Это рядом с тобой.</p></div></article>
+    </section>
+
+    <section class="gallery-section section">
+      <header class="section-head reveal"><span class="eyebrow">chapter ii</span><h2>Наши мгновения</h2><p>Нажми на воспоминание, чтобы вернуться туда.</p></header>
+      <div class="gallery" id="gallery">
+        <button class="photo memory m1" data-title="Тот самый закат" data-date="Наше начало"></button>
+        <button class="photo memory m2" data-title="Вечер для двоих" data-date="Время остановилось"></button>
+        <button class="photo memory m3" data-title="Цветы без повода" data-date="Просто потому, что ты есть"></button>
+        <button class="photo memory m4" data-title="Туда, где мы" data-date="Моё любимое место"></button>
+      </div>
+    </section>
+
+    <section class="reasons section">
+      <header class="section-head reveal"><span class="eyebrow">chapter iii</span><h2>Почему я тебя люблю</h2><p>Потому что одной причины никогда не будет достаточно.</p></header>
+      <div class="reason-grid" id="reasons"></div>
+    </section>
+
+    <section class="games section">
+      <header class="section-head reveal"><span class="eyebrow">interlude</span><h2>Немного волшебства</h2></header>
+      <div class="game-card reveal"><div class="game-copy"><small>игра № 1</small><h3>Поймай мои сердечки</h3><p>Они всегда летят к тебе.</p><button class="pill" id="startCatch">Сыграем? ❤</button></div><div class="catch-field" id="catchField"><div class="score"><b id="score">0</b>/10 ♥</div><p id="catchHint">Нажми «Сыграем?»</p></div></div>
+      <div class="game-card reveal"><div class="game-copy"><small>игра № 2</small><h3>Найди наше сердце</h3><p>Среди многих — одно особенное.</p><div id="findMessage"></div></div><div class="heart-grid" id="heartGrid"></div></div>
+    </section>
+
+    <section class="compliment section reveal">
+      <span class="eyebrow">только для тебя</span><h2 id="complimentText">Напоминание на случай,<br>если ты вдруг забыла…</h2><button class="pill" id="complimentBtn">Мне нужен комплимент ✦</button>
+    </section>
+
+    <section class="letters section">
+      <header class="section-head reveal"><span class="eyebrow">open when…</span><h2>Открой, когда…</h2></header><div class="letter-grid" id="letterGrid"></div>
+    </section>
+
+    <section class="finale section" id="finale">
+      <div class="final-question reveal" id="finalQuestion"><span class="eyebrow">one more thing</span><h2>Знаешь, чего я хочу<br>больше всего?</h2><button class="pill" id="revealFinal">Узнать ❤</button></div>
+      <div class="final-letter" id="finalLetter"><p>Чтобы спустя много лет мы открыли этот сайт вместе и улыбнулись, вспоминая, с чего всё начиналось.</p><button class="big-heart" id="bigHeart" aria-label="Нажать на сердце">❤</button><h2>Я люблю тебя <i>❤</i></h2></div>
+      <button class="secret" id="secret" aria-label="Секретное сердечко">♥</button>
+    </section>
+  </main>
+
+  <div class="modal" id="photoModal"><button class="close" aria-label="Закрыть">×</button><div class="modal-photo memory"></div><div class="modal-copy"><small></small><h3></h3></div></div>
+  <div class="secret-scene" id="secretScene"><button class="close">×</button><span>Ты нашла секрет ❤</span><p>Но мой главный секрет в том, что я каждый день влюбляюсь в тебя заново.</p></div>
+  <script src="script.js"></script>
+</body>
+</html>
